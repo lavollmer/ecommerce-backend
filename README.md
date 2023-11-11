@@ -1,7 +1,7 @@
-# E-commerce Back End Starter Code
+# ecommerce-backend project
 
 ## Project Description
-This project entailed building a back end for an e-commerce site using starter code. In this project, I had to configure a working Express API and utilize mySQL database and Sequelize.
+This project entailed building a back end for an e-commerce site using starter code. In this project, an individual will configure a working Express API and utilize mySQL database and Sequelize.
 
 In the beginning, it required creating a schema.sql, setting up the configuration with a dotenv file. From there, one will need to create models for each table and routes to pair with them. After completion, in the terminal run "npm run dev" and utilize POSTMAN to test your routes. 
 
@@ -14,10 +14,14 @@ This project used:
 * POSTMAN 
 
 ## Usage
-
-Screenshots:
+Github Link:https://github.com/lavollmer/ecommerce-backend
 
 Video Submission:
+
+Screenshots:
+![POSTMAN Example GET REQUEST](./img/GETREQUEST_categories.png)
+![POSTMAN Example GET REQUEST](./img/GETREQUEST_products.png)
+![POSTMAN Example](./img/POSTMAN_example.png)
 
 
 ## Credit

@@ -16,7 +16,7 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    location_name: {
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -32,7 +32,7 @@ Product.init(
       defaultValue: 10,
       allowNull: false,
       validate: {
-        isDecimal: true
+        isInt: true
       }
     },
     //association

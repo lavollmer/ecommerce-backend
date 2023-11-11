@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Category and Tag data
   try {
     const payload = await Product.create(req.body, {
-      include: [{ model: Category, through: ProductTag, as: "my_tags" }]
+      include: [{ model: Tag, through: ProductTag, as: "my_products" }]
     });
     res.status(200).json({ status: 'success', payload })
   } catch (err) {

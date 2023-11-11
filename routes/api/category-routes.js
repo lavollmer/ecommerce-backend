@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Products
   try {
     const payload = await Category.create(req.body, {
-      include: [{ model: Product, through: ProductTag, as: "my_products" }]
+      include: [{ model: Category }]
     });
     res.status(200).json({ status: 'success', payload })
   } catch (err) {
@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Products
   try {
     const payload = await Category.findByPK(req.params.id, {
-      include: [{ model: Product, through: ProductTag, as: "my_products" }]
+      include: [{ model: Product }]
     });
     res.status(200).json({ status: 'success', payload })
   } catch (err) {

@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
     });
     //debugging 
     console.log(payload);
-    if (Category === null) {
+    if (payload === null) {
       res.status(500).json({ status: 'error', sendback: "category is null" })
     } else {
       res.status(200).json({ status: 'success', payload })

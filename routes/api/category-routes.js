@@ -57,7 +57,11 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id
       }
     });
-    res.status(200).json({ status: 'success' })
+    if (payload === 0) {
+      res.status(200).json({ status: 'Category is listed at zero' })
+    } else {
+      res.status(200).json({ status: 'success' })
+    }
   } catch (err) {
     res.status(500).json({ status: 'error', sendback: err.message })
   }

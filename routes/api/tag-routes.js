@@ -8,6 +8,8 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const payload = await Tag.findAll();
+    //debugging
+    console.log(payload);
     res.status(200).json({ status: 'success', payload })
   } catch (err) {
     res.status(500).json({ status: 'error', sendback: err.message })

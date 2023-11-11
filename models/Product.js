@@ -35,6 +35,7 @@ Product.init(
         isDecimal: true
       }
     },
+    //association
     category_id: {
       type: DataTypes.INTEGER,
       references: {

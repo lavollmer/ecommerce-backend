@@ -16,7 +16,7 @@ This project used:
 ## Usage
 Github Link:https://github.com/lavollmer/ecommerce-backend
 
-Video Submission:
+Video Submission:https://drive.google.com/file/d/13D4RGf8XrQD78kG2QxchkzWWwzDr0Cn9/view
 
 Screenshots:
 ![POSTMAN Example GET REQUEST](./img/GETREQUEST_categories.png)

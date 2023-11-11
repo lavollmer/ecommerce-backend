@@ -18,11 +18,11 @@ Product.init(
     },
     product_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     price: {
       type: DataTypes.DECIMAL,
-      allowNull: true,
+      allowNull: false,
       validate: {
         isDecimal: true
       }
@@ -30,9 +30,9 @@ Product.init(
     stock: {
       type: DataTypes.INTEGER,
       defaultValue: 10,
-      allowNull: true,
+      allowNull: false,
       validate: {
-        isInt: true
+        isNumeric: true
       }
     },
     //association

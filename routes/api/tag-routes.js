@@ -58,11 +58,7 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id
       }
     });
-    if (payload === 0) {
-      res.status(200).json({ status: 'Tag is listed at zero' })
-    } else {
-      res.status(200).json({ status: 'success' })
-    }
+    res.status(204).json({ status: 'Successful deletion', sendback: 'Successful deletion' })
   } catch (err) {
     res.status(500).json({ status: 'error', sendback: err.message })
   }

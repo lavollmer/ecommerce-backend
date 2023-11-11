@@ -1,3 +1,4 @@
+const express = require('express');
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
 
@@ -8,8 +9,6 @@ router.get('/', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const payload = await Tag.findAll();
-    //debugging
-    console.log(payload);
     res.status(200).json({ status: 'success', payload })
   } catch (err) {
     res.status(500).json({ status: 'error', sendback: err.message })
@@ -20,7 +19,7 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
-    const payload = await Model.findByPk(req.params.id, {
+    const payload = await Tag.findByPk(req.params.id, {
       include: [{ model: Product, through: ProductTag, as: "my_tags" }]
     });
     res.status(200).json({ status: 'success', payload })
@@ -42,7 +41,9 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
-    const payload = await Tag.create(req.body);
+    const payload = await Tag.update(req.body, {
+      where: { id: req.params.id },
+    });
     res.status(200).json({ status: 'success', payload })
   } catch (err) {
     res.status(500).json({ status: 'error', sendback: err.message })

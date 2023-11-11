@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
-    const payload = await Model.findByPK(req.params.id, {
+    const payload = await Model.findByPk(req.params.id, {
       include: [{ model: Product, through: ProductTag, as: "my_tags" }]
     });
     res.status(200).json({ status: 'success', payload })

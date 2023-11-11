@@ -1,3 +1,4 @@
+const express = require('express');
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
@@ -22,8 +23,8 @@ router.get('/:id', async (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   try {
-    const payload = await Product.findByPK(req.params.id, {
-      include: [{ model: Category }, { model: Tag }]
+    const payload = await Product.findByPk(req.params.id, {
+      include: [{ model: Category }, { model: Tag, as: "my_products" }]
     });
     res.status(200).json({ status: 'success', payload })
   } catch (err) {

@@ -23,7 +23,13 @@ router.get('/:id', async (req, res) => {
     const payload = await Category.findByPk(req.params.id, {
       include: [{ model: Product }]
     });
-    res.status(200).json({ status: 'success', payload })
+    //debugging 
+    console.log(payload);
+    if (Category === null) {
+      res.status(500).json({ status: 'error', sendback: "category is null" })
+    } else {
+      res.status(200).json({ status: 'success', payload })
+    }
   } catch (err) {
     res.status(500).json({ status: 'error', sendback: err.message })
   }

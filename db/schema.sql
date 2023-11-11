@@ -37,3 +37,9 @@ CREATE TABLE ProductTag (
   FOREIGN KEY (product_id) REFERENCES Product(id) ON DELETE CASCADE,
   FOREIGN KEY (tag_id) REFERENCES Tag(id) ON DELETE CASCADE
 );
+
+ALTER TABLE ProductTag
+DROP FOREIGN KEY producttag_ibfk_2;
+
+ALTER TABLE ProductTag
+DROP FOREIGN KEY producttag_ibfk_1;

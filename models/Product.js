@@ -18,12 +18,10 @@ Product.init(
     },
     product_name: {
       type: DataTypes.STRING,
-      defaultValue: 'Sneakers',
       allowNull: true
     },
     price: {
       type: DataTypes.DECIMAL,
-      defaultValue: 0,
       allowNull: true,
       validate: {
         isDecimal: true
